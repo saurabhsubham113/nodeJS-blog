@@ -6,7 +6,7 @@ const app = express()
 const Article = require('./models/article')
 const articleRouter = require('./routes/article')
 
-mongoose.connect(process.env.MONGO_URL, {
+mongoose.connect(`mongodb+srv://${process.env.NAME}:${process.env.KEY}.mongodb.net/blog?retryWrites=true&w=majority`, {
     useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true
 })
 
